@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "install": "cd ./server && npm i && cd ../frontend && npm i"
   },
   "repository": {
     "type": "git",
