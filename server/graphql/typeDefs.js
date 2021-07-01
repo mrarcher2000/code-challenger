@@ -10,4 +10,9 @@ module.exports = gql`
     type Query {
         getPosts: [Post]
     }
+
+    type Editor {
+        id: ID!
+        body: String!
+    }
     `;
