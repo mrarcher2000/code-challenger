@@ -16,6 +16,10 @@ body {
   background-color: var(--white);
 }
 
+h1, h2 {
+  color: #FB3640;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -99,4 +103,22 @@ input:checked + .slider:before {
 a {
   text-decoration: none;
   color: var(--white);
+}
+
+footer {
+  background-color: #605F5E;
+  bottom: 0px;
+  position: absolute;
+  width: 100vw;
+  margin: 0px
+}
+footer h1 {
+  text-align: center;
+  font-size: 12px;
+  margin: 5px;
+  color: #FB3640;
+}
+footer a{
+  color: #FB3640;
+  text-decoration: underline 1px;
 }
