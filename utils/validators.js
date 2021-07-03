@@ -6,10 +6,10 @@ module.exports.validateRegisterInput = (
 ) => {
     const errors = {};
     if(username.trim() === ''){
-        errors.username = 'The username cannot be left empty!'
+        errors.username = 'The Username cannot be left empty!'
     }
     if(email.trim() === ''){
-        errors.email = 'The email cannot be left empty!'
+        errors.email = 'The Email cannot be left empty!'
     } else {
 
         //Regex found at @W3 resource https://www.w3resource.com/javascript/form/email-validation.php
@@ -22,7 +22,7 @@ module.exports.validateRegisterInput = (
     }
 
     if(password === ''){
-        errors.password = 'You cant have an empty passowrd'
+        errors.password = 'You cant have an empty password'
 
     } else if(password !== confirmPassword){
         errors.confirmPassword = 'The passwords have to match';
@@ -37,7 +37,7 @@ module.exports.validateRegisterInput = (
     
 };
 
-module.exports.validateLoginInput = (username,password) => {
+module.exports.validateLoginInput = (username, password) => {
     const errors = {};
     if(username.trim() === ''){
         errors.username = 'The Username cannot be left empty!'
@@ -54,4 +54,4 @@ module.exports.validateLoginInput = (username,password) => {
 
 
 
-}
+};
