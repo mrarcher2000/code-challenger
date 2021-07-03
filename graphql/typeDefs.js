@@ -50,5 +50,8 @@ module.exports = gql`
         login(username: String!, password: String!): User!
         createPost(body: String!): Post!
         deletePost(postId: ID!): String!
+        createComm(postId: String!, body: String!): Post!
+        deleteComm(postId: ID!, commentId: ID!): Post!
+        likePost(postId: ID!): Post!
     }
     `;
