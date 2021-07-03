@@ -94,11 +94,14 @@ module.exports = {
       };
 
       //spread function return
-      return {
+      /* return {
         ...res._doc,
         id: res._id,
         token
-      };
+      }; */
+
+     
     }
+    
   }
 };
