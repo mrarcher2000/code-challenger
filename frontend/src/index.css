@@ -95,3 +95,30 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+.codeEditor {
+  display: flex;
+  /* width: 42.5%;
+  background-color: lightblue;
+  border: 20px solid lightblue; */
+  padding: 0;
+}
+
+.code {
+  width: 50%;
+  display: inline-block;
+}
+
+.frame {
+  width: 50%;
+  height: 50%;
+}
+
+.blCJWW {
+  width: 100%;
+  max-width: 600px;
+  height: '';
+  min-height: '';
+  text-align: initial;
+}
