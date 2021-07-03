@@ -7,12 +7,32 @@ module.exports = gql`
         createdAt: String!
         username: String!
     }
+    type User {
+        id: ID!
+        email: String!
+        token: String!
+        username: String!
+        createdAt: String!
+
+
+    }
+    input RegisterInput{
+        username: String!
+        password: String!
+        confirmPassword: String!
+        email: String!
+    }
     type Query {
         getPosts: [Post]
     }
 
+<<<<<<< HEAD:graphql/typeDefs.js
+    type Mutation{
+        register(registerInput: RegisterInput): User!
+=======
     type Editor {
         id: ID!
         body: String!
+>>>>>>> main:server/graphql/typeDefs.js
     }
     `;
