@@ -39,7 +39,7 @@ module.exports = {
             //making sure no empty post posted
 
             if (args.body.trim() === ''){
-                throw new Error('Youre post cannot be empty')
+                throw new Error('Your post cannot be empty')
             }
 
             const newPost = new Post({
