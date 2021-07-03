@@ -21,11 +21,13 @@
   "homepage": "https://github.com/mrarcher2000/code-challenger#readme",
   "dependencies": {
     "apollo-server": "^2.25.2",
+    "apollo-server-express": "^2.25.2",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.2.0",
     "graphql": "^15.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.0",
+    "react-apollo-hooks": "^0.5.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

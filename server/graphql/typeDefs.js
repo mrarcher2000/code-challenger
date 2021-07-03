@@ -1,6 +1,6 @@
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-express');
 
-module.exports = gql`
+const typeDefs = gql`
     type Post {
         id: ID!
         body: String!
@@ -26,13 +26,9 @@ module.exports = gql`
         getPosts: [Post]
     }
 
-<<<<<<< HEAD:graphql/typeDefs.js
     type Mutation{
         register(registerInput: RegisterInput): User!
-=======
-    type Editor {
-        id: ID!
-        body: String!
->>>>>>> main:server/graphql/typeDefs.js
     }
     `;
+
+module.exports = typeDefs

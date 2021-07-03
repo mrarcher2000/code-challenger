@@ -1,5 +1,4 @@
 const Post = require('../../models/Post');
-const Editor = require('../../models/Editor');
 
 module.exports = {
     Query: {
