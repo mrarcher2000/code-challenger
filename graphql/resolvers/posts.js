@@ -49,11 +49,11 @@ module.exports = {
             return post;
          },
 
-         //delete post functtion
+         //delete post function
          async deletePost(_, { postId }, context){
              const user = checkAuth(context);
 
-             //checks to make sure user deltes own post
+             //checks to make sure user deletes own post
              try{
                  const post = await Post.findById(postId);
                  if(user.username === post.username){
