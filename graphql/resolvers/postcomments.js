@@ -1,4 +1,4 @@
-const { UserInputError } = require('apollo-server');
+const { AuthenticationError, UserInputError } = require('apollo-server');
 
 const checkAuth = require('../../utils/check-auth');
 const Post = require('../../models/Post');
@@ -26,6 +26,28 @@ module.exports = {
                 await post.save();
                 return post;
             }  else throw new UserInputError('Cannot find Post');
+        },
+
+        //delete comment
+
+        deleteComm: async (_, { postId, commentId }, context) => {
+            const { username } = checkAuth(context);
+
+            const post = await Post.findById(postId);
+
+            if(post){
+                const commIndex = post.comments.findIndex(c => c.id === commentId);
+
+                if(post.comments[commIndex].username === username){
+                    post.comments.splice(commIndex, 1);
+                    await post.save();
+                    return post;
+                } else {
+                    throw new AuthenticationError('You cannot delete another users post')
+                }
+            } else {
+                throw new UserInputError('Cannot find Post')
+            }
         }
     }
 };
