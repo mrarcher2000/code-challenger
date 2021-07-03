@@ -3,15 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.20",
+    "@apollo/react-hooks": "^4.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "ace-builds": "^1.4.12",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.5.1",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-ace": "^9.4.1",
+    "react-apollo": "^3.1.5",
+    "react-apollo-hooks": "^0.5.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+<<<<<<< HEAD
     "terminal-in-react": "^4.3.1",
+=======
+    "semantic-ui-react": "^2.0.3",
+>>>>>>> 476fa922af3181204510134c05c855b2169d4034
     "web-vitals": "^1.1.2"
   },
   "scripts": {
