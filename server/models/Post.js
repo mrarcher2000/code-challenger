@@ -19,7 +19,7 @@ const postSchema = new Schema({
         }
     ],
 
-    codeblock: [
+    code: [
         {
             body: String,
             username: String,
