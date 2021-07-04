@@ -45,6 +45,7 @@ module.exports = gql`
 
     }
 
+
     type Mutation{
         register(registerInput: RegisterInput): User!
         login(username: String!, password: String!): User!
@@ -54,4 +55,5 @@ module.exports = gql`
         deleteComm(postId: ID!, commentId: ID!): Post!
         likePost(postId: ID!): Post!
     }
+
     `;
