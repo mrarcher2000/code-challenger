@@ -17,10 +17,6 @@ function Nav() {
         </Link>
       </div>
       <div className="nav-content">
-        <label className="switch">
-          <input type="checkbox"></input>
-          <span className={`slider round`}></span>
-        </label>
         {Auth.loggedIn() ? (
           <>
             <Link to="/profile">Your Profile</Link>
