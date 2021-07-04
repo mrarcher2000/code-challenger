@@ -21,4 +21,8 @@ mongoose
     })
     .then(res => {
         console.log(`ArchDev Pants your server running at ${res.url}`)
-    });
+    })
+
+    .catch(err =>{
+        console.error(err)
+    })

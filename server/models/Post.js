@@ -18,6 +18,16 @@ const postSchema = new Schema({
             createdAt: String,
         }
     ],
+
+    codeblock: [
+        {
+            body: String,
+            username: String,
+            createdAt: String,
+        }
+    ],
+
+    
     users: {
         type: Schema.Types.ObjectId,
         ref: 'users'

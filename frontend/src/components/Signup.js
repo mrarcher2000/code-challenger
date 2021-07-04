@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
-import { Form, Button } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 
