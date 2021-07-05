@@ -6,6 +6,7 @@ import ApolloClient from 'apollo-boost';
 
 import Home from './components/Home'
 import NoMatch from './components/NoMatch'
+import Editor from './components/Editor';
 import Footer from './components/Footer'
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -29,20 +30,21 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ApolloHooksProvider client={client}>
-      <Router>
-        <div>
-          <Nav />
+        <Router>
           <div>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={Signup} />
-              <Route component={NoMatch} />
-            </Switch>
+            <Nav />
+            <div>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/editor' component={Editor} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </Router>
+        </Router>
       </ApolloHooksProvider>
     </ApolloProvider>
   );

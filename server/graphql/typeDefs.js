@@ -26,13 +26,8 @@ module.exports = gql`
         getPosts: [Post]
     }
 
-<<<<<<< HEAD:graphql/typeDefs.js
-    type Mutation{
-        register(registerInput: RegisterInput): User!
-=======
     type Editor {
         id: ID!
         body: String!
->>>>>>> main:server/graphql/typeDefs.js
     }
     `;

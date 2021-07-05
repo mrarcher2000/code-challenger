@@ -18,11 +18,7 @@
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
-    "terminal-in-react": "^4.3.1",
-=======
     "semantic-ui-react": "^2.0.3",
->>>>>>> 476fa922af3181204510134c05c855b2169d4034
     "web-vitals": "^1.1.2"
   },
   "scripts": {
