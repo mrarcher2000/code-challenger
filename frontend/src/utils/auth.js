@@ -63,7 +63,7 @@ function AuthProvider(props) {
   );
 }
 
-export { AuthContext, AuthProvider };
+export default { AuthContext, AuthProvider };
 
 
 
@@ -103,7 +103,6 @@ export { AuthContext, AuthProvider };
     window.location.assign('/');
   }
 }
-
-export default new AuthService(); 
-
 */
+// export default new AuthService(); 
+

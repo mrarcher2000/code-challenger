@@ -112,15 +112,14 @@ h2 {
 }
 
 
-<<<<<<< HEAD
 .codeEditor {
   position: relative;
   display: flex;
   /* width: fit-content; */
   height: 550px;
   width: 750px;
-  background-color: lightblue;
-  border: 20px solid lightblue;
+  background-color: var(--light-blue);
+  border: 20px solid var(--light-blue);
   padding: 0px;
   margin: 0px;
 }
@@ -135,16 +134,6 @@ h2 {
   height: 50%;
 }
 
-.blCJWW {
-  width: 100%;
-  max-width: 600px;
-  height: '';
-  min-height: '';
-  text-align: initial;
-}
-
-=======
->>>>>>> c775b8af2ef8a55efccd732e33969ad6547e45ce
 a {
   text-decoration: none;
   color: var(--white);
