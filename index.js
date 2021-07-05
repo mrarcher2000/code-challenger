@@ -9,7 +9,8 @@ const { MONGODB } = require('./server/config');
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: ({ req }) => ({ req })
 });
 
 mongoose
@@ -20,4 +21,8 @@ mongoose
     })
     .then(res => {
         console.log(`ArchDev Pants your server running at ${res.url}`)
-    });
+    })
+
+    .catch(err =>{
+        console.error(err)
+    })
