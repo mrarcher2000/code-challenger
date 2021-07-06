@@ -3,8 +3,6 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { Form, Button } from "semantic-ui-react";
 
-import Auth from "../utils/auth";
-
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
@@ -25,8 +23,6 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
-      Auth.login(data.login.token);
     } catch (e) {
       console.log(e);
     }

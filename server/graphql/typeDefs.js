@@ -45,15 +45,6 @@ const typeDefs = gql`
 
     }
 
-<<<<<<< HEAD
-    type Mutation{
-        register(registerInput: RegisterInput): User!
-    }
-    `;
-
-module.exports = typeDefs
-=======
-
     type Mutation{
         register(registerInput: RegisterInput): User!
         login(username: String!, password: String!): User!
@@ -65,4 +56,3 @@ module.exports = typeDefs
     }
 
     `;
->>>>>>> c775b8af2ef8a55efccd732e33969ad6547e45ce
