@@ -48,6 +48,31 @@ module.exports = {
             } else {
                 throw new UserInputError('Cannot find Post')
             }
-        }
+        },
+
+        createCode: async (_, { postId, body }, context) => {
+            const { username } = checkAuth(context);
+            if(body.trim() === '') {
+                throw new UserInputError('Cannot have an code comment', {
+                    errors: {
+                        body: 'Your code cannot be empty'
+                    }
+                })
+            }
+
+            const code = Post.findById(postId);
+
+            if(code){
+                code.comments.unshift({
+                    body,
+                    username,
+                    createdAt: new Date().toISOString()
+                })
+                await post.save();
+                return post;
+            }  else throw new UserInputError('Cannot find Post');
+        },
+
+
     }
 };
