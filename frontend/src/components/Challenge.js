@@ -15,21 +15,21 @@ function Challenge() {
       <div>
         <h1>{cName}</h1>
         <h2>{cDesc}</h2>
-        <Button onClick={setShowChallenge(true)}>Show Challenge</Button>
+        <Button onClick={() => setShowChallenge(true)}>Show Challenge</Button>
       </div>
       
     );
   }
-//   if (showChallenge === true) {
-//       return (
-//           <div>
-//               <h1>{cName}</h1>
-//               <h2>{cDesc}</h2>
-//               <Editor testCases={cTestCases}/>
-//               <Timer />
-//           </div>
-//       )
-//   }
+  if (showChallenge === true) {
+      return (
+          <div>
+              <h1>{cName}</h1>
+              <h2>{cDesc}</h2>
+              <Editor testCases={cTestCases}/>
+              <Timer />
+          </div>
+      )
+  }
 }
 
 export default Challenge;
