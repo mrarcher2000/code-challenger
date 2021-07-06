@@ -2,32 +2,39 @@ import React, { useContext, useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { Button, Form } from "semantic-ui-react";
 import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+//import { ADD_USER } from "../utils/mutations";
 import gql from "graphql-tag";
 
-function Signup() {
-  const [formState, setFormState] = useState({
+function Signup(props) {
+
+  const context = useContext(Auth);
+
+
+  const [addUser, { loading }] = useMutation(ADD_USER, {
+    update(
+      _,
+      {
+        data: { register: userData }
+      }
+    ) {
+      context.login(userData);
+      props.history.push('/');
+    },
+   
+    variables: values
+  });
+
+
+  const { handleChange, handleFormSubmit, values } = useState(addUser, {
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-
-  const handleChange = (event) => {
-    setFormState({ ...values, [event.target.name]: event.target.value });
-  };
-
-  const [addUser, { loading }] = useMutation(ADD_USER, {
-    update(proxy, result) {
-      console.log(result);
-    },
-    variables: values,
-  });
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  
+  /*function registerUser() {
     addUser();
-  };
+  }*/
 
   return (
     <div>
@@ -40,7 +47,7 @@ function Signup() {
             type="username"
             name="username"
             id="username"
-            value={formState.username}
+            value={values.username}
             onChange={handleChange}
           />
         </Form.field>
@@ -51,7 +58,7 @@ function Signup() {
             name="email"
             type="email"
             id="email"
-            value={formState.email}
+            value={values.email}
             onChange={handleChange}
           />
         </Form.field>
@@ -62,7 +69,7 @@ function Signup() {
             name="password"
             type="password"
             id="password"
-            value={formState.password}
+            value={values.password}
             onChange={handleChange}
           />
         </Form.field>
@@ -74,7 +81,7 @@ function Signup() {
             name="confirmPassWord"
             type="password"
             id="password"
-            value={formState.confirmPassword}
+            value={values.confirmPassword}
             onChange={handleChange}
           />
         </Form.field>
@@ -83,4 +90,28 @@ function Signup() {
     </div>
   );
 }
+const ADD_USER = gql`
+  mutation register(
+    $username: String!
+    $email: String!
+    $password: String!
+    $confirmPassword: String!
+  ) {
+    register(
+      registerInput: {
+        username: $username
+        email: $email
+        password: $password
+        confirmPassword: $confirmPassword
+      }
+    ) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
+
 export default Signup;
