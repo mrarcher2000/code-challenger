@@ -16,13 +16,6 @@ function Editor(props) {
   const [userCode, setUserCode] = useState("");
   const testCases = props.testCases
 
-  const runTestCases = (output) => {
-    for(let i=0; testCases.length > i; i++) {
-        if(output === testCases[i].expectedOutput) console.log("correct")
-        else console.log("incorrect")
-    }
-  }
-
   const onChange = (newValue) => {
     setUserCode(newValue);
     localStorage.setItem("currentCode", newValue);
@@ -32,7 +25,17 @@ function Editor(props) {
   const handleClick = (e) => {
     e.preventDefault();
     let runCode = new Function('input', userCode)
-    runTestCases(runCode(3))
+    let correctCheck = true;
+    for(let i=0; i < testCases.length; i++) {
+      // testCases[i].expectedOutput is EXPECTED OUTPUT 
+      // runCode(testCases[i].input) is INPUT ARR
+      if(runCode(testCases[i].input) === testCases[i].expectedOutput) console.log("correct")
+      else {
+        console.log('incorrect :(');
+        correctCheck = false;
+      }
+    }
+
   };
 
   const editorStlye = { 

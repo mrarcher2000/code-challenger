@@ -160,3 +160,13 @@ footer a {
 .terminal-base {
   width: 900px !important;
 }
+
+.daily-challenge {
+
+}
+
+.daily-challenge-header {
+  background-color: var(--grey);
+  text-align: center;
+  padding: 10px;
+}
