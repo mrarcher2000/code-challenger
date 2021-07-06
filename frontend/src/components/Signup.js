@@ -3,41 +3,36 @@ import { useMutation } from "@apollo/react-hooks";
 import { Button, Form } from "semantic-ui-react";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
+import gql from "graphql-tag";
 
 function Signup() {
   const [formState, setFormState] = useState({
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setFormState({ ...values, [event.target.name]: event.target.value });
   };
+
+  const [addUser, { loading }] = useMutation(ADD_USER, {
+    update(proxy, result) {
+      console.log(result);
+    },
+    variables: values,
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.log(e);
-    }
+    addUser();
   };
 
   return (
     <div>
       <h1>Signup</h1>
-      <Form onSubmit={handleFormSubmit}>
+      <Form onSubmit={handleFormSubmit} noValidate className={loading ? 'loading' : '' }>
         <Form.field>
           <input
             className="form-input"
@@ -71,10 +66,45 @@ function Signup() {
             onChange={handleChange}
           />
         </Form.field>
+
+        <Form.field>
+          <input
+            className="form-input"
+            placeholder="Confirm Password"
+            name="confirmPassWord"
+            type="password"
+            id="password"
+            value={formState.confirmPassword}
+            onChange={handleChange}
+          />
+        </Form.field>
         <Button type="submit">Sign Up</Button>
       </Form>
     </div>
   );
 }
 
+const ADD_USER = gql`
+  mutation register(
+    $username: String!
+    $email: String!
+    $password: String!
+    $confirmPassWord: String!
+  ) {
+    register(
+      registerInput: {
+        username: $username
+        email: $email
+        password: $password
+        confirmPassword: $confirmPassword
+      }
+    ) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
 export default Signup;
