@@ -134,3 +134,29 @@ footer a {
   color: #fb3640;
   text-decoration: underline 1px;
 }
+
+.codeEditor {
+  position: relative;
+  display: flex;
+  width: 740px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.ace_editor, .ace_editor *{
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace !important;
+}
+  /* 
+.code {
+  width: 50%;
+  display: inline-block;
+} */
+
+.frame {
+  width: 50%;
+  height: 50%;
+}
+
+.terminal-base {
+  width: 900px !important;
+}
