@@ -17,9 +17,11 @@
     "react-apollo": "^3.1.5",
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^17.0.2",
+    "react-markdown": "^6.0.2",
     "react-scripts": "4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
+    "terminal-in-react": "^4.3.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
