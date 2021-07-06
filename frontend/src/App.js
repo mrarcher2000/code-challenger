@@ -8,7 +8,7 @@ import Home from './components/Home'
 import NoMatch from './components/NoMatch'
 import Footer from './components/Footer'
 import Login from './components/Login';
-import Signup from './components/Signup';
+// import Signup from './components/Signup';
 import Nav from './components/Nav';
 import DailyChallenge from './components/DailyChallenge'
 import './index.css';
@@ -37,7 +37,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={Signup} />
+              {/* <Route exact path='/signup' component={Signup} /> */}
               <Route exact path="/daily-challenge" component={DailyChallenge} />
               {/* <Route exact path="/leaderboard" component={Leaderboard} />
               <Route exact path="/feed" component={Feed} /> */}

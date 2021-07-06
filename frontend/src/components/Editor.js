@@ -31,8 +31,8 @@ function Editor(props) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    let runCode = new Function(userCode)();
-    runTestCases(runCode)
+    let runCode = new Function('input', userCode)
+    runTestCases(runCode(3))
   };
 
   const editorStlye = { 
