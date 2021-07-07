@@ -2,8 +2,12 @@ import React, { useContext, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Button, Form } from "semantic-ui-react";
 import Auth from "../utils/auth";
+<<<<<<< HEAD
 //import { ADD_USER } from "../utils/mutations";
 import gql from "graphql-tag";
+=======
+import { ADD_USER } from "../utils/mutations";
+>>>>>>> b4ea0d639fe96ba654227b5368168d8c4cd646bd
 
 
 function Signup(props) {
@@ -36,8 +40,8 @@ function Signup(props) {
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
+<<<<<<< HEAD
   
   */
   
@@ -83,6 +87,31 @@ function Signup(props) {
   /*function registerUser() {
     addUser();
   }*/
+=======
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+>>>>>>> b4ea0d639fe96ba654227b5368168d8c4cd646bd
 
   return (
     <div>
@@ -121,24 +150,13 @@ function Signup(props) {
             onChange={handleChange}
           />
         </Form.field>
-
-        <Form.field>
-          <input
-            className="form-input"
-            placeholder="Confirm Password"
-            name="confirmPassWord"
-            type="password"
-            id="password"
-            value={formState.confirmPassword}
-            onChange={handleChange}
-          />
-        </Form.field>
         <Button type="submit">Sign Up</Button>
       </Form>
     </div>
   );
 }
 
+<<<<<<< HEAD
 
  const ADD_USER = gql`
   mutation register(
@@ -167,3 +185,6 @@ function Signup(props) {
 
 
 export default Signup;
+=======
+export default Signup;
+>>>>>>> b4ea0d639fe96ba654227b5368168d8c4cd646bd

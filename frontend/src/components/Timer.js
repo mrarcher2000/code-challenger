@@ -10,6 +10,8 @@ const Timer = (props) => {
         setMinutes(minutes + 1);
         setSeconds(0);
       }
+      localStorage.setItem('minutes', minutes);
+      localStorage.setItem('seconds', seconds);
     }, 1000);
     return () => {
       clearInterval(myInterval);

@@ -9,9 +9,12 @@ function DailyChallenge() {
   let cDesc = challenge.desc;
   let cTestCases = challenge.testCases;
   return (
-    <div>
-      <h1>Daily Challenge</h1>
+    <div className="daily-challenge">
+      <h1 className="daily-challenge-header">Daily Challenge</h1>
+    <div className="daily-challenge-body">  
+      <h2 className="daily-challenge-subheader">Today's Challenge:</h2>
       <Challenge></Challenge>
+    </div>
     </div>
   );
 }
