@@ -173,6 +173,7 @@ footer a:hover {
   background-color: var(--grey);
   text-align: center;
   padding: 10px;
+  text-shadow: 1px 1px var(--white);
 }
 
 .daily-challenge-subheader {
