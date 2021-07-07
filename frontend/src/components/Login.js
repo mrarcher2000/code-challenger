@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { Form, Button } from "semantic-ui-react";
-import Footer from './Footer'
+
+import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -24,6 +25,8 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
+
+      Auth.login(data.login.token);
     } catch (e) {
       console.log(e);
     }
@@ -62,7 +65,6 @@ const Login = (props) => {
         </Form.Field>
         <Button type="submit">Login</Button>
       </Form>
-      <Footer />
     </main>
   );
 };

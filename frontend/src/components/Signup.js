@@ -1,10 +1,8 @@
 import React, { useContext, useState } from "react";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 import { Button, Form } from "semantic-ui-react";
+import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
-import Footer from './Footer'
-import Auth from '../utils/auth'
-
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -75,7 +73,6 @@ function Signup() {
         </Form.field>
         <Button type="submit">Sign Up</Button>
       </Form>
-      <Footer />
     </div>
   );
 }
