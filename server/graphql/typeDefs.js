@@ -53,6 +53,8 @@ const typeDefs = gql`
         createComm(postId: String!, body: String!): Post!
         deleteComm(postId: ID!, commentId: ID!): Post!
         likePost(postId: ID!): Post!
+        createCode(postId: ID!): Post!
     }
 
     `;
+    module.exports = typeDefs
