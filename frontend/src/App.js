@@ -8,7 +8,7 @@ import Home from './components/Home'
 import NoMatch from './components/NoMatch'
 import Footer from './components/Footer'
 import Login from './components/Login';
-import Signup from './components/Signup';
+import {Signup} from './components/Signup';
 import Nav from './components/Nav';
 import DailyChallenge from './components/DailyChallenge'
 import './index.css';
