@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Image, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import "semantic-ui-css/semantic.min.css";
+import Footer from './Footer'
+
 
 function Home() {
   return (
@@ -66,6 +68,7 @@ function Home() {
           </h1>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

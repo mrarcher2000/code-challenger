@@ -10,6 +10,8 @@ module.exports = {
     Query: {
         ...postsResolvers.Query,
         ...highScoreResolvers.Query
+        ...userResolvers.Query
+        
     },
     Mutation: {
         ...userResolvers.Mutation,

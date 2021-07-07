@@ -1,7 +1,4 @@
 const { AuthenticationError, UserInputError } = require('apollo-server');
-
-
-
 const Post = require('../../models/Post');
 const checkAuth = require('../../utils/check-auth');
 
@@ -29,33 +26,6 @@ module.exports = {
                  throw new Error(err);
              }
          },
-
-         //get all users
-
-         async getUsers(){
-            try{
-                const users = await User.find().sort({ createdAt }); //sorts posts by descending order
-                return users;
-            } catch(err) {
-                throw new Error(err);
-            }
-        },
-
-        //get one user
-        async getUser(_, { userId }){
-            try{
-                const userId = await Post.findById(userId);
-                if(user){
-                    return user;
-                } else{
-                    throw new Error('Cannot find user')
-                }
-            } catch(err){
-                throw new Error(err);
-            }
-        },
-
-
      },
 
      

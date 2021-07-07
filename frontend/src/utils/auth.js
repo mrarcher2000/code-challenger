@@ -67,9 +67,9 @@ export default { AuthContext, AuthProvider };
 
 
 
-/* class AuthService {
+class AuthService {
   getProfile() {
-    return decode(this.getToken());
+    return jwtDecode(this.getToken());
   }
 
   loggedIn() {
@@ -79,7 +79,7 @@ export default { AuthContext, AuthProvider };
 
   isTokenExpired(token) {
     try {
-      const decoded = decode(token);
+      const decoded = jwtDecode(token);
       if (decoded.exp < Date.now() / 1000) {
         return true;
       } else return false;
@@ -105,4 +105,6 @@ export default { AuthContext, AuthProvider };
 }
 */
 // export default new AuthService(); 
+
+export default new AuthService(); 
 
