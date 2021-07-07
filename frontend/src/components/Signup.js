@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/react-hooks";
 import { Button, Form } from "semantic-ui-react";
 import { ADD_USER } from "../utils/mutations";
 import Footer from './Footer'
+import Auth from '../utils/auth'
 
 
 function Signup() {

@@ -135,6 +135,10 @@ footer a {
   text-decoration: underline 1px;
 }
 
+footer a:hover {
+  color: var(--white);
+}
+
 .codeEditor {
   position: relative;
   display: flex;
@@ -159,4 +163,39 @@ footer a {
 
 .terminal-base {
   width: 900px !important;
+}
+
+.daily-challenge {
+
+}
+
+.daily-challenge-header {
+  background-color: var(--grey);
+  text-align: center;
+  padding: 10px;
+}
+
+.daily-challenge-subheader {
+  color: var(--red);
+  text-shadow: 1px 1px var(--grey) !important;
+  font-size: 40px;
+  margin: 0px !important;
+  margin-bottom: 20px !important;
+}
+
+.daily-challenge-body {
+  margin: 25px;
+}
+
+.challenge-body h1, h2{
+  margin-left: 0px !important;
+  margin-bottom: 5px !important;
+  color: var(--red) !important;
+  text-shadow: 1px 1px var(--grey) !important;
+}
+
+.challenge-button {
+  background-color: var(--red) !important;
+  color: var(--white);
+  box-shadow: 2px 2px var(--grey) !important;
 }
