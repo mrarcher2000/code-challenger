@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Button, Form } from "semantic-ui-react";
 import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+//import { ADD_USER } from "../utils/mutations";
 import gql from "graphql-tag";
 
 
@@ -138,7 +138,9 @@ function Signup(props) {
     </div>
   );
 }
-/* const ADD_USER = gql`
+
+
+ const ADD_USER = gql`
   mutation register(
     $username: String!
     $email: String!
@@ -162,6 +164,6 @@ function Signup(props) {
   }
 `;
 
-*/
+
 
 export default Signup;
