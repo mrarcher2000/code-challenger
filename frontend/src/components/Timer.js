@@ -17,7 +17,7 @@ const Timer = (props) => {
   });
 
   return (
-    <div>
+    <div className="timer">
       {minutes === 0 && seconds === 0 ? null : (
         <h1>
           {" "}
