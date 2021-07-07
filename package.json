@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"nodemon index\" \"cd frontend && npm start\"",
-    "installMods": "concurrently \"cd server && npm i\" \"cd frontend && npm i\""
+    "installMods": "concurrently \"cd server && npm i\" \"cd frontend && npm i\"",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
