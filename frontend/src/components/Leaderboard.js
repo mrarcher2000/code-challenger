@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from './Nav';
+import { Link } from "react-router-dom";
+
 import { Grid, Table } from 'semantic-ui-react';
 import { POST_SCORES } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
@@ -62,12 +64,27 @@ function Leaderboard() {
 
     return (
         <div>
+            <nav>
+                <div>
+                    <Link to="/">
+                        <h1>Code Challenger</h1>
+                    </Link>
+                </div>
+            </nav>
 
-            {localStorage.getItem("isChallengeComplete") == 'true' ? <div>
-                <h1>Congrats! You completed the challenge, {userHighScore.username}!</h1>
-                <h3>Your new hiqhscore is: {userHighScore.totalScore}</h3>
-                <h4>Challenges completed: {userHighScore.challengesCompleted}</h4>
-            </div> : ''}
+            {
+                localStorage.getItem("isChallengeComplete") == 'true' ?
+                    <div>
+                        <br /> <br /> <br /> <br />
+                        <Grid centered columns={3}>
+                            <div>
+                                <h1>Congrats! You completed the challenge, {userHighScore.username}!</h1>
+                                <h3>Your new hiqhscore is: {userHighScore.totalScore} !!</h3>
+                                <h4>Challenges completed: {userHighScore.challengesCompleted}</h4>
+                            </div>
+                        </Grid>
+                    </div>
+                    : ''}
             <br /> <br /> <br /> <br />
             <Grid centered columns={3}>
                 <Grid.Row>

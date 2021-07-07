@@ -9,7 +9,7 @@ const highScoreResolvers = require('./highscores');
 module.exports = {
     Query: {
         ...postsResolvers.Query,
-        ...highScoreResolvers.Query
+        ...highScoreResolvers.Query,
         ...userResolvers.Query
         
     },
