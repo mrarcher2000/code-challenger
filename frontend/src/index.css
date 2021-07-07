@@ -17,8 +17,10 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: #fb3640;
+  text-shadow: 1px 1px var(--grey);
 }
 
 nav {
@@ -199,4 +201,21 @@ footer a:hover {
   background-color: var(--red) !important;
   color: var(--white);
   box-shadow: 2px 2px var(--grey) !important;
+}
+
+.feed-group {
+  margin-left: 10px !important;
+}
+
+.feed-card {
+  width: 99vw !important;
+}
+
+.feed-card code {
+  color: var(--white);
+  text-shadow: 1px 1px var(--grey);
+}
+
+.feed-card .meta {
+  color: var(--white)!important
 }

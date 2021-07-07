@@ -14,12 +14,12 @@ function Leaderboard() {
     // const [challengeCompleted, setChallengeCompleted] = useState({false});
     // const [postScores, {error}] = useMutation(POST_SCORES);
 
-
+    let pullRecentScore = localStorage.getItem("score");
     const newScore = () => {
         var isChallengeComp = localStorage.getItem("isChallengeComplete");
 
         if (isChallengeComp === 'true') {
-            let pullRecentScore = localStorage.getItem("score");
+            
             setUserHighScore({ username: 'Admin', challengesCompleted: '1', totalScore: pullRecentScore });
             console.log(userHighScore);
             // localStorage.removeItem("isChallengeCompleted");
@@ -42,13 +42,13 @@ function Leaderboard() {
 
 
         setMostChallenges({
-            users: ['Jack', 'Jillian', 'Admin'],
-            challengesComplete: [5, 4, 1]
+            users: ['Jack', 'Jillian', 'Admin', 'Jill'],
+            challengesComplete: [1, 1, 1, 1]
         })
 
         setHighestScores({
-            user: ['Jillian', 'RonDotCom', 'Jill'],
-            highScore: [5324, 4949, 3500]
+            user: ['Admin', 'Jillian', 'Jack', 'Jill'],
+            highScore: [pullRecentScore, 3045, 2124, 1900]
         })
 
         newScore();
@@ -64,35 +64,22 @@ function Leaderboard() {
 
     return (
         <div>
-            <nav>
-                <div>
-                    <Link to="/">
-                        <h1>Code Challenger</h1>
-                    </Link>
-                </div>
-            </nav>
-
+            <h1 className="daily-challenge-header">Leaderboards</h1>
             {
                 localStorage.getItem("isChallengeComplete") == 'true' ?
                     <div>
-                        <br /> <br /> <br /> <br />
                         <Grid centered columns={3}>
                             <div>
                                 <h1>Congrats! You completed the challenge, {userHighScore.username}!</h1>
-                                <h3>Your new hiqhscore is: {userHighScore.totalScore} !!</h3>
-                                <h4>Challenges completed: {userHighScore.challengesCompleted}</h4>
+                                <h2>Your new highscore is: {userHighScore.totalScore}!</h2>
+                                <h3>Challenges completed: {userHighScore.challengesCompleted}</h3>
                             </div>
                         </Grid>
                     </div>
                     : ''}
-            <br /> <br /> <br /> <br />
+
             <Grid centered columns={3}>
                 <Grid.Row>
-                    <Grid.Column width={2}>
-                        <h1>Leaderboards</h1>
-                        <br />
-                        <br />
-                    </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column>
@@ -118,13 +105,17 @@ function Leaderboard() {
                                     <Table.Cell>{mostChallenges.users[2]}</Table.Cell>
                                     <Table.Cell>{mostChallenges.challengesComplete[2]}</Table.Cell>
                                 </Table.Row>
+                                <Table.Row>
+                                    <Table.Cell>{mostChallenges.users[3]}</Table.Cell>
+                                    <Table.Cell>{mostChallenges.challengesComplete[3]}</Table.Cell>
+                                </Table.Row>
                             </Table.Body>
                         </Table>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column>
-                        <h2>Highest Combined Scores</h2>
+                        <h2>High Scores</h2>
                         <Table>
                             <Table.Header>
                                 <Table.Row>
@@ -145,6 +136,10 @@ function Leaderboard() {
                                 <Table.Row>
                                     <Table.Cell>{highestScores.user[2]}</Table.Cell>
                                     <Table.Cell>{highestScores.highScore[2]}</Table.Cell>
+                                </Table.Row>
+                                <Table.Row>
+                                    <Table.Cell>{highestScores.user[3]}</Table.Cell>
+                                    <Table.Cell>{highestScores.highScore[3]}</Table.Cell>
                                 </Table.Row>
                             </Table.Body>
                         </Table>

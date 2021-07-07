@@ -18,19 +18,10 @@ function Nav() {
         </Link>
       </div>
       <div className="nav-content">
-        {Auth.loggedIn() ? (
-          <>
             <Link to="/profile">Your Profile</Link>
             <a href="/" onClick={logout}>
               Logout
             </a>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-          </>
-        )}
       </div>
     </nav>
   );

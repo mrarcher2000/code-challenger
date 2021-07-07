@@ -15,7 +15,7 @@ function Home() {
         </h2>
       </div>
       <div className="home-body">
-        <h1>How would you like to compete today?</h1>
+        <h1>What would you like to do today?</h1>
         <div className="home-cards">
           <Card>
             <Card.Content>
@@ -42,7 +42,7 @@ function Home() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Button>Check it out!</Button>
+              <a href="/feed"><Button>Check it out!</Button></a>
             </Card.Content>
           </Card>
           <Card>
@@ -56,16 +56,11 @@ function Home() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Button>View Leaderboards</Button>
+            <a href='/leaderboard'><Button>Leaderboard</Button></a>
             </Card.Content>
           </Card>
         </div>
         <div>
-          <h1>
-            Maybe add global feed down here or leave it empty and add images to
-            cards to fill a little bit of the blank space let me know what do
-            you guys think?
-          </h1>
         </div>
       </div>
       <Footer />

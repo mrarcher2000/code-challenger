@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import Nav from './components/Nav';
 import DailyChallenge from './components/DailyChallenge'
 import Leaderboard from './components/Leaderboard';
+import Feed from './components/Feed'
 import './index.css';
 
 const client = new ApolloClient({
