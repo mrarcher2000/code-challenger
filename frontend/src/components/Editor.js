@@ -35,7 +35,18 @@ function Editor(props) {
         correctCheck = false;
       }
     }
-
+    if(correctCheck == true) {
+      localStorage.setItem("isChallengeComplete", true);
+      let minutes = localStorage.getItem('minutes');
+      let seconds = localStorage.getItem('seconds');
+      let linesOfCode = userCode.split(';').length;
+      let secondsScore = 60 - seconds;
+      let minutesScore = 60 - minutes;
+      let linesScore = 50 - linesOfCode;
+      let totalScore = (secondsScore + minutesScore) * linesScore;
+      localStorage.setItem("score", totalScore);
+      window.location.href = "/leaderboard"
+    }
   };
 
   const editorStlye = { 

@@ -59,11 +59,6 @@ function Home() {
           </Card>
         </div>
         <div>
-          <h1>
-            Maybe add global feed down here or leave it empty and add images to
-            cards to fill a little bit of the blank space let me know what do
-            you guys think?
-          </h1>
         </div>
       </div>
     </div>

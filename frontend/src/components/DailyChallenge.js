@@ -11,8 +11,10 @@ function DailyChallenge() {
   return (
     <div className="daily-challenge">
       <h1 className="daily-challenge-header">Daily Challenge</h1>
-      <h2>Today's Challenge:</h2>
+    <div className="daily-challenge-body">  
+      <h2 className="daily-challenge-subheader">Today's Challenge:</h2>
       <Challenge></Challenge>
+    </div>
     </div>
   );
 }
