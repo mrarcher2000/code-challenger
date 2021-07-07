@@ -12,7 +12,9 @@ const server = new ApolloServer({
     resolvers,
     context: ({ req }) => ({ req })
 });
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
 mongoose
     .connect(MONGODB, { useNewUrlParser: true })
     .then(() => {
