@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mrarcher2000/code-challenger#readme",
   "dependencies": {
+    "@apollo/client": "^3.3.21",
     "apollo-server": "^2.25.2",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.2.0",
