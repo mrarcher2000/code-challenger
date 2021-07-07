@@ -16,13 +16,6 @@ function Editor(props) {
   const [userCode, setUserCode] = useState("");
   const testCases = props.testCases
 
-  const runTestCases = (output) => {
-    for(let i=0; testCases.length > i; i++) {
-        if(output === testCases[i].expectedOutput) console.log("correct")
-        else console.log("incorrect")
-    }
-  }
-
   const onChange = (newValue) => {
     setUserCode(newValue);
     localStorage.setItem("currentCode", newValue);
@@ -31,8 +24,29 @@ function Editor(props) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    let runCode = new Function(userCode)();
-    runTestCases(runCode)
+    let runCode = new Function('input', userCode)
+    let correctCheck = true;
+    for(let i=0; i < testCases.length; i++) {
+      // testCases[i].expectedOutput is EXPECTED OUTPUT 
+      // runCode(testCases[i].input) is INPUT ARR
+      if(runCode(testCases[i].input) === testCases[i].expectedOutput) console.log("correct")
+      else {
+        console.log('incorrect :(');
+        correctCheck = false;
+      }
+    }
+    if(correctCheck == true) {
+      localStorage.setItem("isChallengeComplete", true);
+      let minutes = localStorage.getItem('minutes');
+      let seconds = localStorage.getItem('seconds');
+      let linesOfCode = userCode.split(';').length;
+      let secondsScore = 60 - seconds;
+      let minutesScore = 60 - minutes;
+      let linesScore = 50 - linesOfCode;
+      let totalScore = (secondsScore + minutesScore) * linesScore;
+      localStorage.setItem("score", totalScore);
+      window.location.href = "/leaderboard"
+    }
   };
 
   const editorStlye = { 

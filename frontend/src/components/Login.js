@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { Form, Button } from "semantic-ui-react";
+import Footer from './Footer'
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -61,6 +62,7 @@ const Login = (props) => {
         </Form.Field>
         <Button type="submit">Login</Button>
       </Form>
+      <Footer />
     </main>
   );
 };
