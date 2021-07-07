@@ -1,4 +1,6 @@
 const {Post} = require('./Post');
-const {User} = require('./User')
+const {User} = require('./User');
 
-module.exports = {Post, User}
+const {Scores} = require('./ChallengeScores');
+
+module.exports = {Post, User, Scores}

@@ -35,3 +35,14 @@ export const ADD_POST = gql`
     }
   }
 `;
+
+
+export const POST_SCORES = gql`
+  mutation postScores($username: String!, $challengesCompleted: Int, $totalScore: Int) {
+    postScores(username: $username, challengesCompleted: $challengesCompleted, totalScore: $totalScore) {
+      user
+      challengesCompleted
+      totalScore
+    }
+  }
+`;

@@ -33,6 +33,14 @@ module.exports = gql`
 
 
     }
+
+    type HighScore {
+        id: ID!
+        user: String
+        challengesCompleted: [String]
+        totalScore: Int
+    }
+
     input RegisterInput{
         username: String!
         password: String!
@@ -54,6 +62,7 @@ module.exports = gql`
         createComm(postId: String!, body: String!): Post!
         deleteComm(postId: ID!, commentId: ID!): Post!
         likePost(postId: ID!): Post!
+        postScores(username: String!, challengesCompleted: Int, totalScore: Int): HighScore!
     }
 
     `;

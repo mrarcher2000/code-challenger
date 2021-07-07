@@ -24,9 +24,9 @@ function Editor() {
 
 
     useEffect(() => {
-        window.addEventListener('load', pullCodeAPI());
+        pullCodeAPI();
         // if (error) {(error) => console.log(error)};
-    });
+    }, []);
 
     const onChange = (newValue) => {
         setUserCode(newValue);

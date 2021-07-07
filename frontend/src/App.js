@@ -12,6 +12,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Nav from './components/Nav';
 import DailyChallenge from './components/DailyChallenge'
+import Leaderboard from './components/Leaderboard';
 import './index.css';
 
 const client = new ApolloClient({
@@ -38,8 +39,8 @@ function App() {
               <Route exact path='/login' component={Login} />
               <Route exact path='/signup' component={Signup} />
               <Route exact path="/daily-challenge" component={DailyChallenge} />
-              {/* <Route exact path="/leaderboard" component={Leaderboard} />
-              <Route exact path="/feed" component={Feed} /> */}
+              <Route exact path="/leaderboard" component={Leaderboard} />
+              {/*<Route exact path="/feed" component={Feed} /> */}
               <Route component={NoMatch} />
             </Switch>
           </div>
